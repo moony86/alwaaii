@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل المنتج - اسم المنتج - منصة الواعي</title>
+    <meta name="description" content="وصف تفصيلي للمنتج الرائع [اسم المنتج] المتوفر على منصة الواعي.">
+    <meta name="keywords" content="اسم المنتج, تطوير ذاتي, منصة الواعي, [كلمات مفتاحية أخرى للمنتج]">
+    
+    <!-- الخطوط -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- مكتبات خارجية (Font Awesome, AOS) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
+
+    <!-- ملف CSS الرئيسي -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ======== الهيدر ======== -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">ال<span>واعي</span></span>
+            </a>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li class="nav-item"><a href="index.html" class="nav-link">الرئيسية</a></li>
+                    <!-- يمكنك إضافة المزيد من الروابط هنا أو جعلها ديناميكية -->
+                    <li class="nav-item"><a href="products-all.html" class="nav-link active">المنتجات</a></li>
+                    <li class="nav-item"><a href="blog-page.html" class="nav-link">المدونة</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">اتصل بنا</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="فتح القائمة">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ======== ترويسة صفحة المنتج (مسار التنقل) ======== -->
+    <section class="product-page-header">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">الرئيسية</a></li>
+                    <li class="breadcrumb-item"><a href="products-all.html">المنتجات</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">دليلك الأول لتداول في السوق السعودي</li>
+                </ol>
+            </nav>
+            <!-- يمكن إضافة عنوان للصفحة هنا إذا أردت، مثل h1 بنفس تنسيق .blog-page-header-title -->
+        </div>
+    </section>
+
+    <!-- ======== تفاصيل المنتج ======== -->
+    <main>
+        <section class="product-details-section section">
+            <div class="container product-details">
+                <!-- معرض صور المنتج -->
+                <div class="product-gallery" data-aos="fade-right">
+                    <div class="product-main-image-container">
+                        <img src="images/product-1.jpg" alt="صورة المنتج الرئيسية - اسم المنتج" id="productMainImage" class="product-main-image">
+                    </div>
+                    <div class="product-thumbnails">
+                        <!-- يجب أن تكون هذه صور مصغرة حقيقية -->
+                        <img src="images/product-1-thumb1.jpg" alt="صورة مصغرة 1 لـ اسم المنتج" class="product-thumbnail active">
+                        <img src="images/product-1-thumb2.jpg" alt="صورة مصغرة 2 لـ اسم المنتج" class="product-thumbnail">
+                        <img src="images/product-1-thumb3.jpg" alt="صورة مصغرة 3 لـ اسم المنتج" class="product-thumbnail">
+                    </div>
+                </div>
+
+                <!-- معلومات المنتج -->
+                <div class="product-info" data-aos="fade-left" data-aos-delay="200">
+                    <span class="product-category-tag">تصنيف المنتج</span>
+                    <h1 class="product-title-full">دليلك نحو عالم التداول</h1>
+                    
+                    <div class="product-rating">
+                        <span class="product-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </span>
+                        <span class="product-reviews-count">(<a href="#reviews">0مراجعة</a>)</span>
+                    </div>
+
+                    <div class="product-price-container">
+                        <span class="product-current-price">25 ريال</span>
+                        <!-- <span class="product-old-price">399 ريال</span> -->
+                        <!-- <span class="product-discount">خصم 25%</span> -->
+                    </div>
+
+                    <p class="product-short-description">
+                        هذا وصف قصير وجذاب للمنتج. اكتشف عالم التداول بخطوات ثابتة بدون عواطف وخوف لتحقيق أهدافك المالية. تعلم الاستراتيجيات الأساسية وكيفية تحليل السوق.
+                    </p>
+
+                    <div class="product-meta-info">
+                        <div class="product-meta-item">
+                            <span class="product-meta-label">التوفر:</span>
+                            <span class="product-meta-value">متوفر في المخزون</span>
+                        </div>
+                        <div class="product-meta-item">
+                            <span class="product-meta-label">التصنيف:</span>
+                            <span class="product-meta-value"><a href="#">تعلم التداول</a>, <a href="#">وعي مالي</a></span>
+                        </div>
+                        <div class="product-meta-item">
+                            <span class="product-meta-label">النوع:</span>
+                            <span class="product-meta-value">منتج رقمي (كتاب/دورة)</span>
+                        </div>
+                    </div>
+
+                    <div class="product-actions">
+                        <div class="quantity-control">
+                            <button class="quantity-btn" id="quantityMinus" aria-label="تقليل الكمية">-</button>
+                            <input type="number" id="quantity" class="quantity-input" value="1" min="1" aria-label="الكمية">
+                            <button class="quantity-btn" id="quantityPlus" aria-label="زيادة الكمية">+</button>
+                        </div>
+                        <a href="https://wa.me/966580037553?دب%20في%20شراء%20[اسم ة%20الواعي" class="btn btn-accent add-to-cart-btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i> اطلب عبر واتساب
+                        </a>
+                        <!-- أو زر إضافة للسلة إذا كان لديك نظام سلة مشتريات -->
+                        <!-- <button class="btn btn-primary add-to-cart-btn"><i class="fas fa-shopping-cart"></i> أضف إلى السلة</button> -->
+                    </div>
+
+                    <div class="product-share-container">
+                        <span class="product-share-label">شارك المنتج:</span>
+                        <div class="product-share-links">
+                            <a href="#" class="social-link" aria-label="مشاركة عبر فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link" aria-label="مشاركة عبر تويتر"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link" aria-label="مشاركة عبر واتساب"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#" class="social-link" aria-label="مشاركة عبر بنترست"><i class="fab fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- تبويبات تفاصيل المنتج (الوصف، المراجعات) -->
+            <div class="product-description-tabs" data-aos="fade-up">
+                <nav class="product-tabs-nav">
+                    <button class="product-tab-link active" data-tab="description-tab">الوصف الكامل</button>
+                    <button class="product-tab-link" data-tab="reviews-tab">المراجعات (15)</button>
+                    <button class="product-tab-link" data-tab="shipping-tab">معلومات إضافية</button>
+                </nav>
+
+                <div id="description-tab" class="product-tab-content active">
+                    <h3>وصف تفصيلي للمنتج</h3>
+                    <p>هنا يأتي الوصف الطويل والمفصل للمنتج. يمكنك استخدام فقرات متعددة، قوائم نقطية، وعناوين فرعية لتنظيم المحتوى.</p>
+                    <p><strong>الميزات الرئيسية:</strong></p>
+                    <ul>
+                        <li>ميزة 1: شرح مفصل للميزة.</li>
+                        <li>ميزة 2: كيف تفيد هذه الميزة المستخدم.</li>
+                        <li>ميزة 3: مواد عالية الجودة أو محتوى قيم.</li>
+                    </ul>
+                    <p>هذا المنتج مثالي لمن يبحث عن [الفئة المستهدفة] ويرغب في تحقيق [النتيجة المرجوة].</p>
+                    <img src="images/product-detail-image.jpg" alt="صورة توضيحية لتفاصيل المنتج" style="max-width: 600px; margin: var(--spacing-md) auto; border-radius: var(--border-radius-md);">
+                    <h4>عنوان فرعي داخل الوصف</h4>
+                    <p>يمكنك أيضًا إضافة المزيد من التفاصيل التقنية أو الفنية هنا إذا كان ذلك مناسبًا لطبيعة المنتج.</p>
+                </div>
+
+                <div id="reviews-tab" class="product-tab-content">
+                    <h3>مراجعات العملاء</h3>
+                    <p>هنا ستعرض مراجعات العملاء للمنتج. (ستحتاج إلى نظام لإدارة وعرض المراجعات).</p>
+                    <!-- مثال لمراجعة واحدة -->
+                    <div class="review-item" style="border-bottom: 1px solid var(--gray-light); padding-bottom: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
+                        <div class="review-rating" style="margin-bottom: var(--spacing-xs);">
+                            <span class="product-stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            </span>
+                        </div>
+                        <h5 style="font-size: var(--font-size-md); margin-bottom: 5px;">مراجعة ممتازة!</h5>
+                        <p style="font-size: var(--font-size-sm); color: var(--text-light); margin-bottom: var(--spacing-xs);">
+                            بواسطة <strong>أحمد محمود</strong> في 10 أغسطس, 2023
+                        </p>
+                        <p style="font-size: var(--font-size-sm); margin-bottom: 0;">المنتج فاق توقعاتي، جودة عالية ومحتوى قيم جدًا. أنصح به بشدة.</p>
+                    </div>
+                    <!-- كرر لمراجعات أخرى -->
+                    <a href="#" class="btn btn-secondary" style="margin-top: var(--spacing-md);">أضف مراجعتك</a>
+                </div>
+
+                <div id="shipping-tab" class="product-tab-content">
+                    <h3>معلومات إضافية</h3>
+                    <p>قد تحتوي هذه المساحة على معلومات حول الشحن (إذا كان منتجًا ماديًا)، سياسة الإرجاع، أو أي تفاصيل أخرى مهمة لا تندرج تحت الوصف العام.</p>
+                    <ul>
+                        <li><strong>نوع المنتج:</strong> رقمي (ملف PDF / وصول لمنصة تعليمية)</li>
+                        <li><strong>التسليم:</strong> فوري بعد إتمام عملية الدفع عبر رابط تحميل أو بريد إلكتروني.</li>
+                        <li><strong>الدعم الفني:</strong> متوفر عبر البريد الإلكتروني <a href="mailto:support@alwaai.com">support@alwaai.com</a>.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم المنتجات ذات الصلة -->
+        <section class="related-products-section section">
+            <div class="container">
+                <h2 class="section-title">منتجات قد تعجبك أيضاً</h2>
+                <div class="products-grid">
+                    <!-- منتج ذو صلة 1 (استخدم نفس هيكل .product-card) -->
+                    <div class="product-card" data-aos="zoom-in-up">
+                        <div class="product-image" style="background-image: url('images/product-2.jpg');"></div>
+                        <div class="product-content">
+                            <span class="product-category">تصنيف آخر</span>
+                            <h3 class="product-title"><a href="product-page-related1.html">اسم منتج آخر ذو صلة</a></h3>
+                            <p class="product-description">وصف مختصر لمنتج آخر قد يثير اهتمام العميل.</p>
+                            <div class="product-footer">
+                                <div class="product-meta">
+                                    <span class="product-price">199 ريال</span>
+                                </div>
+                                <a href="product-page-related1.html" class="btn btn-accent">التفاصيل</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- كرر لمنتجات أخرى ذات صلة -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ======== الفوتر ======== -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo">ال<span>واعي</span></a>
+                <p class="footer-about-text">منصة "الواعي" تسعى لتقديم محتوى فكري عميق ومنتجات رقمية مبتكرة تهدف إلى تنمية الوعي الذاتي، المالي، والمجتمعي، وتشجيع التفكير النقدي البناء.</p>
+                <div class="footer-social-links">
+                     <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                     <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                     <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                     <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">روابط مهمة</h4>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="about.html" class="footer-link"><i class="fas fa-info-circle"></i> عن المنصة</a></li>
+                    <li class="footer-link-item"><a href="blog-page.html" class="footer-link"><i class="fas fa-newspaper"></i> المدونة</a></li>
+                    <li class="footer-link-item"><a href="products-all.html" class="footer-link"><i class="fas fa-store"></i> جميع المنتجات</a></li>
+                    <li class="footer-link-item"><a href="faq.html" class="footer-link"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</a></li>
+                    <li class="footer-link-item"><a href="privacy.html" class="footer-link"><i class="fas fa-shield-alt"></i> سياسة الخصوصية</a></li>
+                    <li class="footer-link-item"><a href="terms.html" class="footer-link"><i class="fas fa-file-contract"></i> شروط الاستخدام</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">تواصل معنا</h4>
+                <ul class="footer-links">
+                    <li class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt footer-contact-icon"></i>
+                        <span>جدة، السعودية (مكتب افتراضي)</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fas fa-envelope footer-contact-icon"></i>
+                        <a href="mailto:info@alwaai.com">info@alwaai.com</a>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fab fa-whatsapp footer-contact-icon"></i>
+                        <a href="https://wa.me/966580037553" target="_blank">+966 58 003 7553</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span id="currentYear"></span> منصة الواعي. جميع الحقوق محفوظة. تطوير وإدارة: عبدالرحيم</p>
+        </div>
+    </footer>
+
+    <!-- ======== زر العودة لأعلى ======== -->
+    <a href="#header" class="back-to-top" id="back-to-top" aria-label="العودة للأعلى">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <!-- مكتبات JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // --- الكود المشترك لجميع الصفحات ---
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                offset: 100
+            });
+
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const navLinks = document.getElementById('nav-links');
+            if (mobileMenuBtn && navLinks) {
+                const navLinkItems = navLinks.querySelectorAll('.nav-link');
+                mobileMenuBtn.addEventListener('click', () => {
+                    navLinks.classList.toggle('show');
+                    mobileMenuBtn.querySelector('i').classList.toggle('fa-bars');
+                    mobileMenuBtn.querySelector('i').classList.toggle('fa-times');
+                });
+                navLinkItems.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (navLinks.classList.contains('show')) {
+                            navLinks.classList.remove('show');
+                            mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                            mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
+
+            const header = document.getElementById('header');
+            if (header) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        header.classList.add('header-scrolled');
+                    } else {
+                        header.classList.remove('header-scrolled');
+                    }
+                });
+            }
+
+            const backToTopBtn = document.getElementById('back-to-top');
+            if (backToTopBtn) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) {
+                        backToTopBtn.classList.add('show');
+                    } else {
+                        backToTopBtn.classList.remove('show');
+                    }
+                });
+                 backToTopBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+            
+            const currentYearSpan = document.getElementById('currentYear');
+            if (currentYearSpan) {
+                currentYearSpan.textContent = new Date().getFullYear();
+            }
+
+            // --- كود خاص بصفحة تفاصيل المنتج ---
+            if (document.querySelector('.product-details-section')) {
+                const mainImage = document.getElementById('productMainImage');
+                const thumbnails = document.querySelectorAll('.product-thumbnail');
+                if (mainImage && thumbnails.length > 0) {
+                    thumbnails.forEach(thumb => {
+                        thumb.addEventListener('click', function() {
+                            mainImage.src = this.src; // افترض أن الصور المصغرة لها نفس اسم الصور الكبيرة مع إضافة "-thumbX" أو شيء مشابه
+                            mainImage.alt = this.alt;
+                            thumbnails.forEach(t => t.classList.remove('active'));
+                            this.classList.add('active');
+                        });
+                    });
+                }
+
+                const quantityInput = document.getElementById('quantity');
+                const minusBtn = document.getElementById('quantityMinus');
+                const plusBtn = document.getElementById('quantityPlus');
+                if (quantityInput && minusBtn && plusBtn) {
+                    minusBtn.addEventListener('click', () => {
+                        let currentValue = parseInt(quantityInput.value);
+                        if (currentValue > 1) {
+                            quantityInput.value = currentValue - 1;
+                        }
+                    });
+                    plusBtn.addEventListener('click', () => {
+                        let currentValue = parseInt(quantityInput.value);
+                        quantityInput.value = currentValue + 1;
+                    });
+                }
+
+                const tabLinks = document.querySelectorAll('.product-tab-link');
+                const tabContents = document.querySelectorAll('.product-tab-content');
+                if (tabLinks.length > 0 && tabContents.length > 0) {
+                    tabLinks.forEach(link => {
+                        link.addEventListener('click', function() {
+                            const targetTab = this.dataset.tab;
+                            tabLinks.forEach(l => l.classList.remove('active'));
+                            this.classList.add('active');
+                            tabContents.forEach(content => {
+                                content.classList.remove('active');
+                                if (content.id === targetTab) {
+                                    content.classList.add('active');
+                                }
+                            });
+                        });
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+ملاحظات هامة على التعديلات:
+
+مسارات الصور: تأكد من صحة مسارات الصور مثل images/product-1.jpg. لقد افترضت أن لديك صورًا مصغرة أيضًا مثل images/product-1-thumb1.jpg.
+
+بيانات المنتج: "اسم المنتج"، "وصف المنتج"، "السعر"، "التصنيف" كلها يجب أن تستبدلها بالبيانات الفعلية للمنتج.
+
+الهيدر والفوتر: تم تضمين هيكل الهيدر والفوتر الكامل كما هو معرف في style.css.
+
+كلاسات CSS: تم استخدام الكلاسات المناسبة مثل .product-page-header, .breadcrumb, .product-details-section, .product-gallery, .product-info, .product-title-full, إلخ.
+
+الرابط عبر واتساب: تم استخدام الكلاس btn btn-accent للزر ليتماشى مع التصميم، وتم تحديث الرابط ليشمل اسم المنتج (يفضل أن يكون ديناميكيًا).
+
+JavaScript: تم إضافة كود JS لتفعيل معرض الصور، أزرار الكمية، وتبويبات وصف المنتج كما هو معرف في style.css. من الأفضل وضع هذا الكود في ملف main.js منفصل وربطه في جميع الصفحات، مع وضع الأجزاء الخاصة بصفحة المنتج داخل شرط if (document.querySelector('.product-details-section')).
+
+ثانياً: إنشاء صفحة قائمة المنتجات (products-all.html)
+
+هذه الصفحة ستعرض جميع المنتجات باستخدام بطاقات المنتجات التي صممتها.
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جميع المنتجات - منصة الواعي</title>
+    <meta name="description" content="تصفح جميع منتجاتنا الرقمية ودوراتنا التدريبية المصممة لتعزيز وعيك وتطويرك الذاتي.">
+    <meta name="keywords" content="منتجات رقمية, دورات, تطوير ذاتي, وعي مالي, تفكير نقدي, منصة الواعي">
+    
+    <!-- الخطوط -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- مكتبات خارجية (Font Awesome, AOS) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet"/>
+
+    <!-- ملف CSS الرئيسي -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ======== الهيدر ======== -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">ال<span>واعي</span></span>
+            </a>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li class="nav-item"><a href="index.html" class="nav-link">الرئيسية</a></li>
+                    <li class="nav-item"><a href="products-all.html" class="nav-link active">المنتجات</a></li>
+                    <li class="nav-item"><a href="blog-page.html" class="nav-link">المدونة</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">اتصل بنا</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="فتح القائمة">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ======== ترويسة صفحة المنتجات ======== -->
+    <section class="blog-page-header"> <!-- يمكن استخدام نفس ترويسة المدونة أو إنشاء ترويسة مخصصة -->
+        <div class="container">
+            <h1 class="blog-page-header-title" data-aos="fade-up">منتجاتنا الرقمية</h1>
+            <p class="blog-page-header-description" data-aos="fade-up" data-aos-delay="100">
+                اكتشف مجموعتنا المتنوعة من الدورات والكتب الرقمية المصممة خصيصًا لرحلة تطويرك.
+            </p>
+        </div>
+    </section>
+
+    <!-- ======== قسم عرض المنتجات ======== -->
+    <main>
+        <section class="products section" id="products-list"> <!-- يمكن إعطاء ID مختلف -->
+            <div class="container">
+                <!-- يمكن إضافة فلاتر هنا (حسب التصنيف، السعر، إلخ) -->
+                <!-- <div class="products-filters" style="margin-bottom: var(--spacing-lg); text-align: center;">
+                    <button class="btn btn-secondary filter-btn active" data-filter="all">الكل</button>
+                    <button class="btn btn-secondary filter-btn" data-filter="tathqef">تثقيف مالي</button>
+                    <button class="btn btn-secondary filter-btn" data-filter="development">تطوير ذاتي</button>
+                </div> -->
+
+                <div class="products-grid">
+                    <!-- منتج 1 -->
+                    <div class="product-card" data-aos="zoom-in-up" data-category="tathqef">
+                        <div class="product-image" style="background-image: url('images/product-1.jpg');"></div>
+                        <div class="product-content">
+                            <span class="product-category">تعلم التداول</span>
+                            <h3 class="product-title"><a href="product-page.html">دليلك الأول نحو عالم التداول</a></h3>
+                            <p class="product-description">اكتشف عالم التداول بخطوات ثابتة بدون عواطف وخوف لتحقيق أهدافك المالية.</p>
+                            <div class="product-footer">
+                                <div class="product-meta">
+                                    <span class="product-price">25 ريال</span>
+                                </div>
+                                <a href="product-page.html" class="btn btn-accent">التفاصيل والشراء <i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- منتج 2 -->
+                    <div class="product-card" data-aos="zoom-in-up" data-aos-delay="100" data-category="development">
+                        <div class="product-image" style="background-image: url('images/product-2.jpg');"></div>
+                        <div class="product-content">
+                            <span class="product-category">وعي مالي</span>
+                            <h3 class="product-title"><a href="product-page-example2.html">دليل المبتدئين للاستثمار الذكي</a></h3>
+                            <p class="product-description">تعلم أساسيات الاستثمار، كيفية تحليل الأسواق، وبناء محفظة استثمارية متنوعة وآمنة.</p>
+                            <div class="product-footer">
+                                <div class="product-meta">
+                                    <span class="product-price">249 ريال</span>
+                                </div>
+                                 <a href="product-page-example2.html" class="btn btn-accent">التفاصيل والشراء <i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- منتج 3 -->
+                    <div class="product-card" data-aos="zoom-in-up" data-aos-delay="200" data-category="tathqef">
+                        <div class="product-image" style="background-image: url('images/product-3.jpg');"></div>
+                        <div class="product-content">
+                            <span class="product-category">تفكير نقدي</span>
+                            <h3 class="product-title"><a href="product-page-example3.html">كتاب "فن التفكير النقدي"</a></h3>
+                            <p class="product-description">دليل شامل يزودك بالأدوات اللازمة لتحليل المعلومات، كشف المغالطات، واتخاذ قرارات واعية.</p>
+                             <div class="product-footer">
+                                <div class="product-meta">
+                                    <span class="product-price">79 ريال</span>
+                                </div>
+                                 <a href="product-page-example3.html" class="btn btn-accent">التفاصيل والشراء <i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- أضف المزيد من بطاقات المنتجات هنا حسب الحاجة -->
+                     <!-- منتج 4 -->
+                    <div class="product-card" data-aos="zoom-in-up" data-aos-delay="300" data-category="development">
+                        <div class="product-image" style="background-image: url('images/product-placeholder.jpg');"></div>
+                        <div class="product-content">
+                            <span class="product-category">تطوير مهني</span>
+                            <h3 class="product-title"><a href="product-page-example4.html">دورة بناء العلامة الشخصية</a></h3>
+                            <p class="product-description">تعلم كيف تبني علامتك الشخصية القوية وتبرز في مجالك المهني.</p>
+                            <div class="product-footer">
+                                <div class="product-meta">
+                                    <span class="product-price">350 ريال</span>
+                                </div>
+                                 <a href="product-page-example4.html" class="btn btn-accent">التفاصيل والشراء <i class="fas fa-shopping-cart"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ترقيم الصفحات (Pagination) إذا كان عدد المنتجات كبيرًا -->
+                <nav aria-label="Page navigation" class="pagination" data-aos="fade-up">
+                    <a href="#" class="pagination-link active" aria-current="page">1</a>
+                    <a href="#" class="pagination-link">2</a>
+                    <a href="#" class="pagination-link">3</a>
+                    <a href="#" class="pagination-link" aria-label="التالي">
+                        <span aria-hidden="true">»</span>
+                    </a>
+                </nav>
+            </div>
+        </section>
+    </main>
+
+    <!-- ======== الفوتر ======== -->
+    <footer class="footer">
+        <!-- نفس كود الفوتر من الصفحة الرئيسية أو صفحة تفاصيل المنتج -->
+        <div class="container footer-container">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo">ال<span>واعي</span></a>
+                <p class="footer-about-text">منصة "الواعي" تسعى لتقديم محتوى فكري عميق ومنتجات رقمية مبتكرة تهدف إلى تنمية الوعي الذاتي، المالي، والمجتمعي، وتشجيع التفكير النقدي البناء.</p>
+                <div class="footer-social-links">
+                     <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                     <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                     <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                     <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">روابط مهمة</h4>
+                <ul class="footer-links">
+                    <li class="footer-link-item"><a href="about.html" class="footer-link"><i class="fas fa-info-circle"></i> عن المنصة</a></li>
+                    <li class="footer-link-item"><a href="blog-page.html" class="footer-link"><i class="fas fa-newspaper"></i> المدونة</a></li>
+                    <li class="footer-link-item"><a href="products-all.html" class="footer-link"><i class="fas fa-store"></i> جميع المنتجات</a></li>
+                    <li class="footer-link-item"><a href="faq.html" class="footer-link"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</a></li>
+                    <li class="footer-link-item"><a href="privacy.html" class="footer-link"><i class="fas fa-shield-alt"></i> سياسة الخصوصية</a></li>
+                    <li class="footer-link-item"><a href="terms.html" class="footer-link"><i class="fas fa-file-contract"></i> شروط الاستخدام</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">تواصل معنا</h4>
+                <ul class="footer-links">
+                    <li class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt footer-contact-icon"></i>
+                        <span>جدة، السعودية (مكتب افتراضي)</span>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fas fa-envelope footer-contact-icon"></i>
+                        <a href="mailto:info@alwaai.com">info@alwaai.com</a>
+                    </li>
+                    <li class="footer-contact-item">
+                        <i class="fab fa-whatsapp footer-contact-icon"></i>
+                        <a href="https://wa.me/966580037553" target="_blank">+966 58 003 7553</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© <span id="currentYear"></span> منصة الواعي. جميع الحقوق محفوظة. تطوير وإدارة: عبدالرحيم</p>
+        </div>
+    </footer>
+
+    <!-- ======== زر العودة لأعلى ======== -->
+    <a href="#header" class="back-to-top" id="back-to-top" aria-label="العودة للأعلى">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <!-- مكتبات JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // الكود المشترك لجميع الصفحات (نفس الكود من صفحة تفاصيل المنتج)
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                offset: 100
+            });
+
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const navLinks = document.getElementById('nav-links');
+            if (mobileMenuBtn && navLinks) {
+                const navLinkItems = navLinks.querySelectorAll('.nav-link');
+                mobileMenuBtn.addEventListener('click', () => {
+                    navLinks.classList.toggle('show');
+                    mobileMenuBtn.querySelector('i').classList.toggle('fa-bars');
+                    mobileMenuBtn.querySelector('i').classList.toggle('fa-times');
+                });
+                navLinkItems.forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (navLinks.classList.contains('show')) {
+                            navLinks.classList.remove('show');
+                            mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                            mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
+            
+            const header = document.getElementById('header');
+            if (header) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        header.classList.add('header-scrolled');
+                    } else {
+                        header.classList.remove('header-scrolled');
+                    }
+                });
+            }
+
+            const backToTopBtn = document.getElementById('back-to-top');
+            if (backToTopBtn) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) {
+                        backToTopBtn.classList.add('show');
+                    } else {
+                        backToTopBtn.classList.remove('show');
+                    }
+                });
+                backToTopBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+            
+            const currentYearSpan = document.getElementById('currentYear');
+            if (currentYearSpan) {
+                currentYearSpan.textContent = new Date().getFullYear();
+            }
+
+            // يمكنك إضافة كود JS خاص بفلترة المنتجات هنا إذا أردت
+            // const filterButtons = document.querySelectorAll('.filter-btn');
+            // const productCards = document.querySelectorAll('.products-grid .product-card');
+            // if(filterButtons.length > 0 && productCards.length > 0) {
+            //     filterButtons.forEach(button => {
+            //         button.addEventListener('click', function() {
+            //             filterButtons.forEach(btn => btn.classList.remove('active'));
+            //             this.classList.add('active');
+            //             const filterValue = this.dataset.filter;
+                        
+            //             productCards.forEach(card => {
+            //                 if (filterValue === 'all' || card.dataset.category === filterValue) {
+            //                     card.style.display = 'flex'; // أو 'block' حسب تصميم البطاقة
+            //                 } else {
+            //                     card.style.display = 'none';
+            //                 }
+            //             });
+            //         });
+            //     });
+            // }
+        });
+    </script>
+</body>
+</html>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Html
+IGNORE_WHEN_COPYING_END
+
+ملاحظات على صفحة قائمة المنتجات:
+
+الهيدر والفوتر: تم تضمينهما بالكامل.
+
+ترويسة الصفحة: استخدمت نفس تنسيق ترويسة المدونة (.blog-page-header) كمثال، يمكنك تخصيصها.
+
+بطاقات المنتجات: تم استخدام نفس كلاس .product-card من ملف style.css لعرض كل منتج.
+
+البيانات: يجب ملء بيانات كل منتج (صورة، اسم، وصف، سعر، رابط) بشكل صحيح.
+
+الفلاتر والترقيم: تم وضع تعليقات لمكان إضافة فلاتر المنتجات وترقيم الصفحات. ستحتاج إلى JavaScript إضافي لتفعيل هذه الميزات إذا كنت ترغب في ذلك. (الكود المعلق للفلترة هو مثال بسيط جداً).
+
+بهذين الملفين، يمكنك الآن بناء صفحات متناسقة لموقعك تعتمد جميعها على ملف style.css المركزي.
