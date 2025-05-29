@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدير الرغبات الأوتوماتيكي</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #4CAF50;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .form-section {
+            padding: 30px;
+            background: white;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input, .form-group select {
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #4CAF50;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+        }
+
+        .table-container {
+            padding: 30px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        th {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .priority-high { color: #e74c3c; font-weight: bold; }
+        .priority-medium { color: #f39c12; font-weight: bold; }
+        .priority-low { color: #27ae60; font-weight: bold; }
+
+        .status-available { background: #d4edda; color: #155724; padding: 5px 10px; border-radius: 15px; }
+        .status-plan { background: #fff3cd; color: #856404; padding: 5px 10px; border-radius: 15px; }
+        .status-waiting { background: #f8d7da; color: #721c24; padding: 5px 10px; border-radius: 15px; }
+
+        .action-btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12px;
+            margin: 2px;
+        }
+
+        .btn-delete {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .btn-buy {
+            background: #27ae60;
+            color: white;
+        }
+
+        .purchase-plan {
+            background: #e8f5e8;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .plan-title {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+
+        .month-plan {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px dotted #ccc;
+        }
+
+        .alert {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-warning {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeaa7;
+        }
+
+        .alert-danger {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            table {
+                font-size: 14px;
+            }
+            
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 مدير الرغبات الأوتوماتيكي المتكامل</h1>
+            <p>نظام ذكي لإدارة رغباتك وتخطيط مشترياتك</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value" id="totalWishes">0</div>
+                <div class="stat-label">إجمالي الرغبات</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="totalAmount">0 ر.س</div>
+                <div class="stat-label">إجمالي المبلغ</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="availableAmount">0 ر.س</div>
+                <div class="stat-label">المبلغ المتاح</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="monthlyBudget">0 ر.س</div>
+                <div class="stat-label">الميزانية الشهرية</div>
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>📝 إضافة رغبة جديدة</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="wishName">اسم الرغبة</label>
+                    <input type="text" id="wishName" placeholder="مثال: جهاز آيفون 15">
+                </div>
+                <div class="form-group">
+                    <label for="category">الصنف</label>
+                    <select id="category">
+                        <option value="">اختر الصنف</option>
+                        <option value="تقنية">تقنية</option>
+                        <option value="ملابس">ملابس</option>
+                        <option value="منزل">أدوات منزلية</option>
+                        <option value="سفر">سفر وسياحة</option>
+                        <option value="تعليم">تعليم وكتب</option>
+                        <option value="رياضة">رياضة وصحة</option>
+                        <option value="ترفيه">ترفيه وألعاب</option>
+                        <option value="أخرى">أخرى</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="amount">المبلغ (ريال)</label>
+                    <input type="number" id="amount" placeholder="0">
+                </div>
+                <div class="form-group">
+                    <label for="priority">درجة الأولوية</label>
+                    <select id="priority">
+                        <option value="عالية">عالية 🔥</option>
+                        <option value="متوسطة" selected>متوسطة ⭐</option>
+                        <option value="منخفضة">منخفضة 💚</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="neededDate">تاريخ الحاجة</label>
+                    <input type="date" id="neededDate">
+                </div>
+                <div class="form-group">
+                    <label for="currentBudget">الميزانية الحالية</label>
+                    <input type="number" id="currentBudget" placeholder="المبلغ المتاح حالياً">
+                </div>
+                <div class="form-group">
+                    <label for="monthlyIncome">الدخل الشهري المخصص</label>
+                    <input type="number" id="monthlyIncome" placeholder="مبلغ شهري للرغبات">
+                </div>
+            </div>
+            <button class="btn" onclick="addWish()">➕ إضافة الرغبة</button>
+        </div>
+
+        <div class="table-container">
+            <h2>📋 قائمة الرغبات</h2>
+            <table id="wishesTable">
+                <thead>
+                    <tr>
+                        <th>الرقم</th>
+                        <th>الرغبة</th>
+                        <th>الصنف</th>
+                        <th>المبلغ</th>
+                        <th>الأولوية</th>
+                        <th>تاريخ الحاجة</th>
+                        <th>الحالة</th>
+                        <th>خطة الشراء</th>
+                        <th>العمليات</th>
+                    </tr>
+                </thead>
+                <tbody id="wishesBody">
+                </tbody>
+            </table>
+        </div>
+
+        <div id="purchasePlans" style="padding: 30px;"></div>
+    </div>
+
+    <script>
+        let wishes = [];
+        let currentBudget = 0;
+        let monthlyIncome = 0;
+        let wishCounter = 1;
+
+        function addWish() {
+            const wishName = document.getElementById('wishName').value;
+            const category = document.getElementById('category').value;
+            const amount = parseFloat(document.getElementById('amount').value) || 0;
+            const priority = document.getElementById('priority').value;
+            const neededDate = document.getElementById('neededDate').value;
+            const budgetInput = document.getElementById('currentBudget').value;
+            const incomeInput = document.getElementById('monthlyIncome').value;
+
+            if (!wishName || !category || amount <= 0) {
+                alert('⚠️ يرجى ملء جميع الحقول المطلوبة');
+                return;
+            }
+
+            if (budgetInput) currentBudget = parseFloat(budgetInput);
+            if (incomeInput) monthlyIncome = parseFloat(incomeInput);
+
+            const wish = {
+                id: wishCounter++,
+                name: wishName,
+                category: category,
+                amount: amount,
+                priority: priority,
+                neededDate: neededDate,
+                status: 'waiting',
+                addedDate: new Date().toLocaleDateString('ar-SA')
+            };
+
+            wishes.push(wish);
+            updateWishesTable();
+            updateStats();
+            calculatePurchasePlans();
+            clearForm();
+        }
+
+        function updateWishesTable() {
+            const tbody = document.getElementById('wishesBody');
+            tbody.innerHTML = '';
+
+            wishes.forEach(wish => {
+                const row = document.createElement('tr');
+                
+                const status = determineStatus(wish);
+                const statusClass = getStatusClass(status);
+                const priorityClass = getPriorityClass(wish.priority);
+                
+                row.innerHTML = `
+                    <td>${wish.id}</td>
+                    <td><strong>${wish.name}</strong></td>
+                    <td>${wish.category}</td>
+                    <td>${wish.amount.toLocaleString()} ر.س</td>
+                    <td class="${priorityClass}">${wish.priority}</td>
+                    <td>${wish.neededDate ? new Date(wish.neededDate).toLocaleDateString('ar-SA') : 'غير محدد'}</td>
+                    <td><span class="${statusClass}">${status}</span></td>
+                    <td>${getPurchasePlan(wish)}</td>
+                    <td>
+                        <button class="action-btn btn-buy" onclick="markAsPurchased(${wish.id})">✅ تم الشراء</button>
+                        <button class="action-btn btn-delete" onclick="deleteWish(${wish.id})">🗑️ حذف</button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function determineStatus(wish) {
+            if (currentBudget >= wish.amount) {
+                return 'متاح للشراء فوراً';
+            } else if (monthlyIncome > 0) {
+                const monthsNeeded = Math.ceil((wish.amount - currentBudget) / monthlyIncome);
+                return `يحتاج ${monthsNeeded} شهر`;
+            } else {
+                return 'في انتظار التمويل';
+            }
+        }
+
+        function getStatusClass(status) {
+            if (status === 'متاح للشراء فوراً') return 'status-available';
+            if (status.includes('شهر')) return 'status-plan';
+            return 'status-waiting';
+        }
+
+        function getPriorityClass(priority) {
+            switch(priority) {
+                case 'عالية': return 'priority-high';
+                case 'متوسطة': return 'priority-medium';
+                case 'منخفضة': return 'priority-low';
+                default: return '';
+            }
+        }
+
+        function getPurchasePlan(wish) {
+            if (currentBudget >= wish.amount) {
+                return '💚 اشترِ الآن';
+            } else if (monthlyIncome > 0) {
+                const needed = wish.amount - currentBudget;
+                const months = Math.ceil(needed / monthlyIncome);
+                return `💡 وفر ${months} شهر`;
+            } else {
+                return '⏳ حدد دخل شهري';
+            }
+        }
+
+        function calculatePurchasePlans() {
+            const plansContainer = document.getElementById('purchasePlans');
+            plansContainer.innerHTML = '<h2>📊 خطط الشراء المقترحة</h2>';
+
+            // ترتيب الرغبات حسب الأولوية والتاريخ
+            const sortedWishes = [...wishes].sort((a, b) => {
+                const priorityOrder = { 'عالية': 3, 'متوسطة': 2, 'منخفضة': 1 };
+                if (priorityOrder[a.priority] !== priorityOrder[b.priority]) {
+                    return priorityOrder[b.priority] - priorityOrder[a.priority];
+                }
+                return new Date(a.neededDate || '2099-12-31') - new Date(b.neededDate || '2099-12-31');
+            });
+
+            let remainingBudget = currentBudget;
+            let currentMonth = 0;
+            const monthlyPlans = [];
+
+            sortedWishes.forEach(wish => {
+                if (remainingBudget >= wish.amount) {
+                    // يمكن شراؤها فوراً
+                    const plan = document.createElement('div');
+                    plan.className = 'purchase-plan';
+                    plan.innerHTML = `
+                        <div class="plan-title">✅ ${wish.name}</div>
+                        <div class="alert alert-success">
+                            يمكن شراؤها فوراً! المبلغ متاح: ${wish.amount.toLocaleString()} ر.س
+                        </div>
+                    `;
+                    plansContainer.appendChild(plan);
+                    remainingBudget -= wish.amount;
+                } else if (monthlyIncome > 0) {
+                    // تحتاج خطة توفير
+                    const needed = wish.amount - remainingBudget;
+                    const monthsNeeded = Math.ceil(needed / monthlyIncome);
+                    
+                    const plan = document.createElement('div');
+                    plan.className = 'purchase-plan';
+                    plan.innerHTML = `
+                        <div class="plan-title">⏰ ${wish.name}</div>
+                        <div class="alert alert-warning">
+                            <strong>خطة التوفير:</strong><br>
+                            • المبلغ المطلوب: ${wish.amount.toLocaleString()} ر.س<br>
+                            • المتاح حالياً: ${remainingBudget.toLocaleString()} ر.س<br>
+                            • يحتاج توفير: ${needed.toLocaleString()} ر.س<br>
+                            • مدة التوفير: ${monthsNeeded} شهر<br>
+                            • الدخل الشهري: ${monthlyIncome.toLocaleString()} ر.س
+                        </div>
+                    `;
+                    plansContainer.appendChild(plan);
+                    
+                    remainingBudget = (remainingBudget + (monthsNeeded * monthlyIncome)) - wish.amount;
+                    currentMonth += monthsNeeded;
+                } else {
+                    // لا يوجد دخل شهري محدد
+                    const plan = document.createElement('div');
+                    plan.className = 'purchase-plan';
+                    plan.innerHTML = `
+                        <div class="plan-title">❌ ${wish.name}</div>
+                        <div class="alert alert-danger">
+                            غير متاح حالياً - يحتاج: ${(wish.amount - remainingBudget).toLocaleString()} ر.س إضافية<br>
+                            <em>يرجى تحديد دخل شهري لإنشاء خطة توفير</em>
+                        </div>
+                    `;
+                    plansContainer.appendChild(plan);
+                }
+            });
+
+            // إضافة ملخص مالي
+            const summary = document.createElement('div');
+            summary.className = 'purchase-plan';
+            summary.innerHTML = `
+                <div class="plan-title">💰 الملخص المالي</div>
+                <div class="alert alert-success">
+                    • إجمالي المطلوب: ${wishes.reduce((sum, w) => sum + w.amount, 0).toLocaleString()} ر.س<br>
+                    • المتاح حالياً: ${currentBudget.toLocaleString()} ر.س<br>
+                    • الدخل الشهري: ${monthlyIncome.toLocaleString()} ر.س<br>
+                    • المتبقي بعد الخطط: ${Math.max(0, remainingBudget).toLocaleString()} ر.س
+                </div>
+            `;
+            plansContainer.appendChild(summary);
+        }
+
+        function updateStats() {
+            document.getElementById('totalWishes').textContent = wishes.length;
+            document.getElementById('totalAmount').textContent = wishes.reduce((sum, w) => sum + w.amount, 0).toLocaleString() + ' ر.س';
+            document.getElementById('availableAmount').textContent = currentBudget.toLocaleString() + ' ر.س';
+            document.getElementById('monthlyBudget').textContent = monthlyIncome.toLocaleString() + ' ر.س';
+        }
+
+        function markAsPurchased(id) {
+            const wishIndex = wishes.findIndex(w => w.id === id);
+            if (wishIndex !== -1) {
+                wishes.splice(wishIndex, 1);
+                updateWishesTable();
+                updateStats();
+                calculatePurchasePlans();
+                alert('✅ تم تسجيل الشراء بنجاح!');
+            }
+        }
+
+        function deleteWish(id) {
+            if (confirm('هل أنت متأكد من حذف هذه الرغبة؟')) {
+                const wishIndex = wishes.findIndex(w => w.id === id);
+                if (wishIndex !== -1) {
+                    wishes.splice(wishIndex, 1);
+                    updateWishesTable();
+                    updateStats();
+                    calculatePurchasePlans();
+                }
+            }
+        }
+
+        function clearForm() {
+            document.getElementById('wishName').value = '';
+            document.getElementById('category').value = '';
+            document.getElementById('amount').value = '';
+            document.getElementById('priority').value = 'متوسطة';
+            document.getElementById('neededDate').value = '';
+        }
+
+        // تحديث التاريخ الافتراضي لتاريخ اليوم
+        document.getElementById('neededDate').value = new Date().toISOString().split('T')[0];
+
+        // تحديث الإحصائيات عند التحميل
+        updateStats();
+    </script>
+</body>
+</html>
